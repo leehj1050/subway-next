@@ -1,27 +1,374 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  position: relative;
+}
+/*navbar*/
+a {
+  text-decoration: none;
+  color: black;
+}
+ul {
+  list-style: none;
+}
+.navbarMain {
+  left: 0;
+  right: 0;
+  padding: 2em;
+  position: absolute;
+  z-index: 10;
+  background-color: #fff;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.sub {
+  color: rgb(255, 202, 57);
+  font-weight: 900;
+  font-size: 3em;
+  margin: 0;
+}
+.way {
+  color: rgb(66, 156, 36);
+  font-weight: 900;
+  font-size: 3em;
+  margin: 0;
+}
+
+/*메인메뉴*/
+.mainMenu {
+  display: flex;
+  padding: 0;
+  margin: 2em 0 0 0;
+  text-align: center;
+}
+.mainMenu li {
+  padding: 1em 1em;
+  flex: 1;
+  cursor: pointer;
+  font-weight: 900;
+}
+.mainMenu li:hover a {
+  color: rgba(75, 151, 50, 0.859);
+}
+.nav:hover .subMenu {
+  display: flex;
+  z-index: 1;
+  position: relative;
+}
+/*서브메뉴*/
+.subMenu {
+  justify-content: space-between;
+  padding: 1.5em 0;
+  text-align: center;
+  line-height: 30px;
+  margin: 0;
+  display: none;
+}
+.subMenu li {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  font-size: 14px;
+}
+.subMenu li a {
+  color: rgb(126, 128, 128);
+}
+.subMenu li a:hover {
+  color: rgba(75, 151, 50, 0.859);
+}
+
+.homePage {
+  position: relative;
+  height: auto;
+}
+
+/*
+slidePage
+*/
+
+.slidePage {
+  cursor: pointer;
+}
+
+.slidePage .slide_item {
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: top;
+}
+
+/*
+homeMenu
+*/
+.homeMenu {
+  height: auto;
+  padding: 2em 1em;
+}
+.homeMenu h2,
+.whatsNew .new_div1 h2 {
+  background: url(../public/img/bul_tit.png) 0 12px no-repeat;
+  font-weight: bold;
+  font-size: 40px;
+  min-height: 60px;
+  padding: 17px 0 0 25px;
+  margin: 0;
+}
+.menuBox {
+  display: flex;
+  justify-content: center;
+}
+.menuUl {
+  margin: auto;
+  padding: 2em 0;
+  display: grid;
+  grid-template-columns: repeat(4, 350px);
+  grid-gap: 20px;
+}
+.menuUl li {
+  padding: 0 1em;
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+.menuUl li:hover {
+  transform: scale(1.2);
+}
+.menuUl li:hover .iconBox {
+  display: flex;
+}
+.menuUl li:hover p {
+  display: none;
+}
+.menuUl li a {
+  color: #000;
+}
+.menuUl li a .iconBox {
+  width: 65px;
+  padding: 1em 0;
+  margin: auto;
+  border-radius: 50%;
+  background-color: rgb(255, 202, 57);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  justify-content: center;
+}
+.menuUl li a .iconBox .icon {
+  color: #fff;
+  font-size: 25px;
+}
+.menuUl li strong {
+  font-size: 18px;
+  height: auto;
+}
+.menuUl li p {
+  font-size: 12px;
+  color: rgb(126, 128, 128);
+}
+.menuUl li a img {
+  width: 100%;
+  height: 200px;
+}
+
+/*
+footer
+*/
+.footerPage {
+  padding: 1em 0;
+  background-color: #292929;
+  color: #666666;
+}
+.infoContainer {
+  display: flex;
+}
+.infoContainer li {
+  margin-right: 5%;
+  font-size: 14px;
+}
+.footerLine {
+  border: 1px solid #666666;
+}
+.addressContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.addressContainer p {
+  font-size: 14px;
+  margin: 8px 0 0 0;
+}
+.snsIcons {
+  padding: 0;
+  display: flex;
+  height: 100%;
+}
+.snsIcons li {
+  width: 100px;
+  height: 100%;
+  text-align: center;
+  font-size: 50px;
+}
+
+/*
+What's New
+*/
+.whatsNew {
+  height: auto;
+  padding: 2em 1em;
+  display: flex;
+  background: url(../public/img/bg_content.gif) 0 0 repeat;
+}
+.whatsNew .new_div1 {
+  padding: 3em 1em 3em 0;
+  width: 260px;
+  text-align: center;
+}
+.whatsNew .new_div1 p {
+  line-height: 22px;
+  font-size: 15px;
+}
+.whatsNew .new_div2 {
+  flex: 2;
+  padding: 3em 0 3em 10em;
+}
+.whatsNew .new_div2 ul {
+  padding: 0;
+  line-height: 40px;
+  font-weight: bold;
+}
+.whatsNew .new_div2 ul li a:hover {
+  border-bottom: 1px solid rgb(66, 156, 36);
+  color: rgb(66, 156, 36);
+}
+
+/*
+sandwich Menu
+*/
+.sandwichPage {
+  position: relative;
+}
+.image_wrap {
+  position: relative;
+}
+.image_wrap img {
+  width: 100%;
+  vertical-align: top;
+}
+.img_text {
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 2em;
+  right: 0;
+}
+.img_text p {
+  line-height: 25px;
+  font-weight: bold;
+}
+.grid_wrap {
+  /* place-items: center; 이것도 가운데 정렬
+  display: grid; */
+  display: flex;
+  justify-content: center;
+  background-color: rgb(237, 235, 235);
+  padding: 5em 0;
+}
+.container {
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 380px);
+  grid-template-rows: repeat(auto, 400px);
+  grid-gap: 20px;
+}
+.item {
+  background-color: #fff;
+  cursor: pointer;
+}
+.item:hover,
+.item:hover .hiddenText {
+  background-color: #009223;
+  display: block;
+}
+.item:hover .hiddenText h2,
+.item:hover .hiddenText p,
+.item:hover .hiddenText div {
+  animation: up 1s;
+}
+.item:hover img,
+.item:hover .listText {
+  display: none;
+}
+.hiddenText {
+  display: none;
+  color: #fff;
+  text-align: center;
+  padding: 20% 10%;
+}
+.ListIconBox {
+  width: 65px;
+  padding: 1em 0;
+  margin: auto;
+  border-radius: 50%;
+  background-color: rgb(255, 202, 57);
+  margin-top: 2em;
+}
+.ListIcon {
+  font-size: x-large;
+}
+.item .img {
+  width: 100%;
+  height: 70%;
+}
+.listText {
+  text-align: center;
+}
+.listText b {
+  color: rgb(255, 202, 57);
+}
+/*탭박스*/
+.tabBox {
+  height: 100px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  /* z-index: 1; */
+  background-color: #fff;
+  bottom: -12.5%;
+  box-shadow: 0 3px 2px -2px gray;
+}
+.tabList {
+  display: flex;
+  padding: 0;
+  text-align: center;
+}
+.tabList li {
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(126, 128, 128);
+  cursor: pointer;
+}
+.tabList li::after {
+  content: "|";
+  margin: 0 1em;
+  font-weight: lighter;
+  color: rgb(214, 214, 198);
+}
+.tabList li:last-child::after {
+  content: "";
+}
+/*애니메이션*/
+@keyframes up {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
 }
