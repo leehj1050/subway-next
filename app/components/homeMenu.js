@@ -10,7 +10,7 @@ import { SlMagnifierAdd } from "react-icons/sl";
 const HomeMenu = () => {
   return (
     <main className="homeMenu">
-      <h2>Subway's Menu</h2>
+      <h2>Subway&apos;s Menu</h2>
       <div className="menuBox">
         <ul className="menuUl">
           <li>
