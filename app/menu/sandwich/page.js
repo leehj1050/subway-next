@@ -102,8 +102,8 @@ const SandwichPage = () => {
       {/*Menu List*/}
       <article className="grid_wrap">
         <ul className="container">
-          {listData.map((menu) => (
-            <li className="item">
+          {listData.map((menu, idx) => (
+            <li className="item" key={idx}>
               <Image src={menu.img} className="img" />
               <div className="listText">
                 <h2 style={{ margin: "0" }}>{menu.name}</h2>
